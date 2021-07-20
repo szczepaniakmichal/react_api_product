@@ -7,6 +7,7 @@ import './App.css';
 const App = () => {
 
     const [products, setProducts] = useState([]);
+    const [totalQuantity, setTotalQuantity] = useState(0);
 
     useEffect(() => {
         fetch('../api/cart.json', {
@@ -21,7 +22,9 @@ const App = () => {
             })
     }, []);
 
-
+    const handleTotalQuantity = (sign) => {
+        sign ? setTotalQuantity(totalQuantity + 1) : setTotalQuantity(totalQuantity - 1)
+    }
 
     console.log("products", products);
 
@@ -34,7 +37,8 @@ const App = () => {
             </div>
             <AddToCart min={product.min}
                        max={product.max}
-                       isBlocked={false}
+                       isBlocked={product.isBlocked}
+                       handleTotalQuantity={handleTotalQuantity}
             />
         </li>
     ));
@@ -45,6 +49,7 @@ const App = () => {
       <ul className="product-list">
           {productList}
       </ul>
+        <p>Łączna ilość produktów Twojego zamówienia: {totalQuantity}</p>
     </div>
   );
 };

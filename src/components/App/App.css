@@ -3,6 +3,10 @@
     --base-font-color: #000;
 }
 
+body {
+    font-family: sans-serif;
+}
+
 .container{
     width: 1000px;
     margin: 100px auto 0 auto;

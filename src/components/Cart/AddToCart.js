@@ -2,15 +2,21 @@ import React, { useState } from 'react';
 
 import './AddToCart.css';
 
-const AddToCart = ({min, max, isBlocked}) => {
+const AddToCart = ({min, max, isBlocked = false, handleTotalQuantity}) => {
     const [quantity, setQuantity] = useState(0);
 
     const handleClickSubstrate = () => {
-        quantity <= min ? null : setQuantity(quantity - 1);
+        if (quantity > min) {
+            setQuantity(quantity - 1);
+            handleTotalQuantity(false)
+        }
     }
 
     const handleClickAdd = () => {
-        quantity >= max ? null : setQuantity(quantity + 1);
+        if (quantity < max) {
+            setQuantity(quantity + 1);
+            handleTotalQuantity(true)
+        }
     }
 
     return (
@@ -18,15 +24,13 @@ const AddToCart = ({min, max, isBlocked}) => {
             <button className="add-to-cart-btn"
                     disabled={isBlocked}
                     onClick={() => handleClickSubstrate()}
-            >
-                -
+            >-
             </button>
             <div className="add-to-cart-how-many">Obecnie masz {quantity} sztuk produktu</div>
             <button className="add-to-cart-btn"
                     disabled={isBlocked}
                     onClick={() => handleClickAdd()}
-            >
-                +
+            >+
             </button>
         </div>
     )
