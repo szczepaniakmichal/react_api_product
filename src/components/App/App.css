@@ -1,3 +1,8 @@
+:root {
+    --price-color: #ff6b00;
+    --base-font-color: #000;
+}
+
 .container{
     width: 1000px;
     margin: 100px auto 0 auto;
@@ -7,4 +12,33 @@
     padding: 10px;
     border-bottom: 1px solid silver;
     list-style: none;
+}
+
+.product-list {
+
+}
+
+.product-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 25px;
+    color: #ff6b00;
+}
+
+.product-list-info {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.product-list-name {
+    color: var(--base-font-color);
+    font-weight: 700;
+}
+
+
+.product-list-price {
+    color: var(--price-color);
 }
