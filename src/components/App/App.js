@@ -38,6 +38,7 @@ const App = () => {
             <AddToCart min={product.min}
                        max={product.max}
                        isBlocked={product.isBlocked}
+                       pid={product.pid}
                        handleTotalQuantity={handleTotalQuantity}
             />
         </li>
