@@ -50,7 +50,7 @@ const App = () => {
       <ul className="product-list">
           {productList}
       </ul>
-        <p>Łączna ilość produktów Twojego zamówienia: {totalQuantity}</p>
+        <p>Łączna ilość produktów Twojego zamówienia: <span className="total-quantity">{totalQuantity}</span></p>
     </div>
   );
 };

@@ -45,7 +45,7 @@ const AddToCart = ({min, max, isBlocked, pid = false, handleTotalQuantity}) => {
                     onClick={() => handleClickSubstrate()}
             >-
             </button>
-            <div className="add-to-cart-how-many">Obecnie masz {quantity} sztuk produktu</div>
+            <div className="add-to-cart-how-many">Obecnie masz <span className="add-to-cart-how-many-qty">{quantity}</span> sztuk produktu</div>
             <button className="add-to-cart-btn"
                     disabled={isBlocked}
                     onClick={() => handleClickAdd()}

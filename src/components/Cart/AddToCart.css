@@ -13,3 +13,7 @@
 .add-to-cart-how-many {
     color: var(--base-font-color);
 }
+
+.add-to-cart-how-many-qty {
+    font-weight: 700;
+}
